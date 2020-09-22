@@ -98,3 +98,15 @@ export const initiatePrivileged = body => {
 export const transitionPrivileged = body => {
   return post('/api/transition-privileged', body);
 };
+
+// Create user with identity provider (e.g. Facebook or Google)
+//
+// If the authentication with idp fails, we will create a new user.
+// For that user needs to confirm data fetched from the idp.
+// This endpoint creates the new user with confirmed data.
+//
+// See `server/api/auth/createWithIdp.js` to see what data should
+// be sent in the body.
+export const createWithIdp = body => {
+  return post('/api/auth/create-with-idp', body);
+};
