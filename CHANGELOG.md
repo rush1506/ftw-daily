@@ -14,6 +14,93 @@ way to update this template, but currently, we follow a pattern:
 
 ## Upcoming version 2020-XX-XX
 
+- [fix] Make sure that the verify email API endpoint has been called successfully before redirecting
+  the user away from EmailVerificationPage.
+  [#1397](https://github.com/sharetribe/ftw-daily/pull/1397)
+
+## [v7.2.0] 2020-12-16
+
+- [add] Add helper functions for setting up your own OIDC authentication and using FTW server as
+  proxy when needed. [#1383](https://github.com/sharetribe/ftw-daily/pull/1383)
+
+  [v7.2.0]: https://github.com/sharetribe/ftw-daily/compare/v7.1.0...v7.2.0
+
+## [v7.1.0] 2020-12-15
+
+- [change] Handle entity update with sparse attributes.
+  [#1392](https://github.com/sharetribe/ftw-daily/pull/1392)
+- [change] Remove react-google-maps dependency. It has not been maintained for 3 years. From now on,
+  we use Google Maps API directly. However, the default map provider is still Mapbox.
+  [#1389](https://github.com/sharetribe/ftw-daily/pull/1389)
+- [fix] Pass metadata through sanitizeUser function.
+  [#1391](https://github.com/sharetribe/ftw-daily/pull/1391)
+- [fix] Call for the same page caused unnecessary rendering
+  [#1388](https://github.com/sharetribe/ftw-daily/pull/1388)
+- [fix] Fix Google Maps default centering if no bounds or center is given.
+  [#1386](https://github.com/sharetribe/ftw-daily/pull/1386)
+- [add] Add timeout and other options for getCurrentLocation call.
+  [#1385](https://github.com/sharetribe/ftw-daily/pull/1385)
+- [fix] Fix FieldCheckbox validation on blur event on Firefox.
+  [#1384](https://github.com/sharetribe/ftw-daily/pull/1384)
+
+  [v7.1.0]: https://github.com/sharetribe/ftw-daily/compare/v7.0.0...v7.1.0
+
+## [v7.0.0] 2020-11-17
+
+This major release renames all the CSS files. If you have made custom components or customized
+existing ones, you should read the related [PR](https://github.com/sharetribe/ftw-daily/pull/1374)
+for more information.
+
+- [change] Update sharetribe-scripts (our fork of create-react-app) to v4.0.0. In addition to
+  changes that CRA@v4 brought along,
+
+  - We started to use`*.module.css` naming pattern for styles that use CSS Modules preprocessor.
+  - We also turned on live CSS Custom Properties (CSS Variables).
+
+  Read the PR for more info: [#1374](https://github.com/sharetribe/ftw-daily/pull/1374)
+
+  [v7.0.0]: https://github.com/sharetribe/ftw-daily/compare/v6.5.0...v7.0.0
+
+## [v6.5.0] 2020-11-16
+
+- [add] Add support for Google login. This works in the same way as Facebook flow so you can check
+  the [Facebook PR](https://github.com/sharetribe/ftw-daily/pull/1364) for the more details.
+  [#1376](https://github.com/sharetribe/ftw-daily/pull/1376)
+- [fix] Routes component got double rendered due to Redux container HOC. Because navigation could
+  happen twice, loadData was also called twice.
+  [#1380](https://github.com/sharetribe/ftw-daily/pull/1380)
+- [fix] 401 return code when rendering on SSR.
+  [#1379](https://github.com/sharetribe/ftw-daily/pull/1379)
+
+  [v6.5.0]: https://github.com/sharetribe/ftw-daily/compare/v6.4.2...v6.5.0
+
+## [v6.4.2] 2020-10-30
+
+- [fix] Fix the issue with form on AuthenticationPage not showing on smaller screens when using
+  Safari as browser. [#1377](https://github.com/sharetribe/ftw-daily/pull/1377)
+
+  [v6.4.2]: https://github.com/sharetribe/ftw-daily/compare/v6.4.1...v6.4.2
+
+## [v6.4.1] 2020-10-20
+
+- [add] Add new Stripe countires Bulgaria, Cyprus, Czech Republic, Malta and Romania to the
+  `StripeConnectAccountForm`. Also reorder BANK_CODE & BRANCH_CODE in UI to more logical order.
+  [#1371](https://github.com/sharetribe/ftw-daily/pull/1371)
+- [fix] Don't pass protected data key through `ConfirmSignupForm` if protected data is empty.
+  [#1370](https://github.com/sharetribe/ftw-daily/pull/1370)
+- [add] Update French translation file (Spanish and German translations have still missing keys).
+  [#1369](https://github.com/sharetribe/ftw-daily/pull/1369)
+- [fix] Pass additional values from `ConfirmSignupForm` forward as user's protected data.
+  [#1368](https://github.com/sharetribe/ftw-daily/pull/1368)
+
+  [v6.4.1]: https://github.com/sharetribe/ftw-daily/compare/v6.4.0...v6.4.1
+
+## [v6.4.0] 2020-10-14
+
+- [add] Add Facebook login as a first step towards supporting social logins and SSO in FTW. This PR
+  introduces new endpoints `createUserWithIdp` and `loginWithIdp` and strategy for logging in with
+  Facebook. See the PR for the more detailed view of the changes.
+  [#1364](https://github.com/sharetribe/ftw-daily/pull/1364)
 - [fix] Fix missing proptype warnings in `TransactionPage` and `TransactionPanel` tests.
   [#1363](https://github.com/sharetribe/ftw-daily/pull/1363)
 - [fix] Improve error handling by passing error details forward instead of creating a new error that
@@ -21,6 +108,8 @@ way to update this template, but currently, we follow a pattern:
   [#1361](https://github.com/sharetribe/ftw-daily/pull/1361)
 - [fix] Remove duplicate page schema from body.
   [#1355](https://github.com/sharetribe/ftw-daily/pull/1355)
+
+  [v6.4.0]: https://github.com/sharetribe/ftw-daily/compare/v6.3.1...v6.4.0
 
 ## [v6.3.1] 2020-08-19
 
